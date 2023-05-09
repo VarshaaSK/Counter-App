@@ -59,4 +59,13 @@ test("Should throw error on showing negative number" , () =>{
     expect(errorMessage).toBeVisible();
 })
 
+test("should check the increment message present in the alertbox", () => {
+    render(<Counter/>);
+    const alertMessage = jest.spyOn(window,'alert').mockImplementation();
+    const addButton = screen.getByTestId("addition");
+    // const alertMessage = screen.getByText("Number incremented by 1");
+    fireEvent.click(addButton);
+    expect(alertMessage).toHaveBeenCalledWith('Number incremented by 1');
+})
+
 

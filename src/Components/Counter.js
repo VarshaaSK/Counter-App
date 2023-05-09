@@ -4,6 +4,7 @@ export default function Counter({initialValue}) {
     const [count, setCount] = useState(initialValue??0);
 
     const handleIncrement = () =>{
+      alert("Number incremented by 1");
         setCount((prevCount) => prevCount+1);
     }
 
